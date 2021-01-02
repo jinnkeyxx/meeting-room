@@ -10,7 +10,7 @@
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="/style.css" />
+
 
     <!-- import the webpage's javascript file -->
 
@@ -22,8 +22,6 @@
 
 <body>
     <div class="container has-text-centered" v-cloak id="app">
-
-
         <div>
             <button class="button is-primary" v-if="!room" @click="createRoom">
           Tạo Meeting
@@ -37,12 +35,11 @@
           Share Desktop
         </button>
         </div>
-
         <div v-if="roomId" class="info">
             <p>Bạn đang ở trong room <strong>{{roomId}}</strong>.</p>
             <p>
                 Gửi link này cho bạn bè cùng join room nhé
-                <a v-bind:href="roomUrl" target="_blank">{{roomUrl}}</a>.
+                <a v-bind:href="roomUrl" target="_blank">{{roomUrl}}</a>
             </p>
             <p>Hoặc bạn cũng có thể copy <code>{{roomId}}</code> để share.</p>
         </div>

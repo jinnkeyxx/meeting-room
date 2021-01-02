@@ -11,12 +11,11 @@ const vm = new Vue({
     },
     computed: {
         roomUrl: function() {
-            return `https://${location.hostname}?room=${this.roomId}`;
+            return `https://${location.hostname}/meeting-room?room=${this.roomId}`;
         }
     },
     async mounted() {
         api.setRestToken();
-
         const urlParams = new URLSearchParams(location.search);
         const roomId = urlParams.get("room");
         if (roomId) {
@@ -26,6 +25,7 @@ const vm = new Vue({
         }
     },
     methods: {
+
         authen: function() {
             return new Promise(async resolve => {
                 const userId = `${(Math.random() * 100000).toFixed(6)}`;
